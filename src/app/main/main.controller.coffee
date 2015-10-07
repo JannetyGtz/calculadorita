@@ -7,11 +7,9 @@ angular.module 'calculadorita'
       year = date.getFullYear()
       return "#{year}#{month}#{day}"
 
-    ventaParser = () ->
-      reg = /\d+[+\/*-]*/g
-      result = reg.test("#{$scope.venta}")
-      console.log result
-      return result
+    ventaParser = (str) ->
+      reg = new RegExp(/^((\d*)[\+\-\/])*(\d*)$/)
+      return reg.test(str)
 
     ref = new Firebase("https://calculadoritaa.firebaseio.com/ventas/1/#{calcDate()}")
     $scope.ventas = $firebaseArray(ref)
@@ -19,9 +17,11 @@ angular.module 'calculadorita'
     $scope.total = 0
 
     $scope.updateTotal = () ->
-      if ventaParser()
+      console.log ventaParser($scope.venta)
+      if ventaParser($scope.venta)
         $scope.total = eval($scope.venta)
       else
+        console.log 'aca no toy'
         $scope.total = 'chupalo!!'
 
     $scope.calcula = () ->
