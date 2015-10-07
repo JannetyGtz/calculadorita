@@ -1,0 +1,7 @@
+.container
+  div.total {{ total }}
+  input(type="tel" ng-model='venta' ng-change='updateTotal()')
+  input(type="submit" value='Facturar' ng-click='calcula()')
+  .ventas
+    .venta(ng-repeat="venta in ventas")
+      {{ venta.total }}
