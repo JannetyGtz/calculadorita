@@ -1,0 +1,17 @@
+.login
+  section.loginform.cf
+  form(name='login', action='index_submit', method='get', accept-charset='utf-8')
+    ul
+        label(for='usermail') Email
+        br
+        br
+        input(type='email', name='usermail', placeholder='email', required='')
+        br
+        br
+        label(for='password') Password
+        br
+        br
+        input(type='password', name='password', placeholder='password', required='')
+        br
+        br
+        input(type='submit', value='Login')
