@@ -13,7 +13,7 @@ angular.module 'calculadorita'
         if error
           console.log('Login Failed', error)
         else
-          $state.go('home')
+          $state.go('main')
           console.log("Authenticated successfully with payload:", authData)
         return
-      $scope.loginData = ''
+      

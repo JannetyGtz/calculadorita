@@ -2,8 +2,8 @@ angular.module 'calculadorita'
   .config ($stateProvider, $urlRouterProvider) ->
     'ngInject'
     $stateProvider
-      .state 'home',
-        url: '/'
+      .state 'main',
+        url: '/principal'
         templateUrl: 'app/main/main.html'
         controller: 'MainController'
         controllerAs: 'main'
@@ -23,4 +23,4 @@ angular.module 'calculadorita'
         controller: 'StoresController'
         controllerAs: 'store_new'
 
-    $urlRouterProvider.otherwise '/'
+    #$urlRouterProvider.otherwise '/'
