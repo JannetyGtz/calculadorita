@@ -17,5 +17,10 @@ angular.module 'calculadorita'
         templateUrl: 'app/signup/signup.html'
         controller: 'SignupController'
         controllerAs: 'signup'
+      .state 'store',
+        url: '/new_store'
+        templateUrl: 'app/stores/stores.html'
+        controller: 'StoresController'
+        controllerAs: 'store_new'
 
     $urlRouterProvider.otherwise '/'

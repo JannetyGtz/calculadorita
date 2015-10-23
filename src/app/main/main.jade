@@ -1,15 +1,16 @@
 .general
-  .container
-    div.total {{ total }}
-    input(type="tel" ng-model='venta' ng-change='updateTotal()')
-    input(type="submit" value='Facturar' ng-click='calcula()')
-  .calendario
-    h1 Calendario
-    h3 Ventas desde:
-    input(type="date" id="desde")
-    h3 Ventas hasta:
-    input(type="date" id="hasta")
-  .ventas
-    h1 Ventas Diarias
-    .venta(ng-repeat="venta in ventas")
-      {{ venta.total }}
+ .container
+   div.total {{ total }}
+   input(type="tel" ng-model='venta' ng-change='updateTotal()')
+   input(type="submit" value='Facturar' ng-click='calcula()')
+ .calendario
+   h1 Calendario
+   h3 Ventas del dia:
+   input(type="date" id="ventas_dia" ng-model='fecha')
+   br
+   br
+   input(type="submit" value='Ventas' ng-click="salesDate()")
+ .ventas
+   h1 Ventas Diarias
+   .venta(ng-repeat="venta in ventas")
+     {{ venta.total }}

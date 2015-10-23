@@ -1,17 +1,10 @@
 .login
-  section.loginform.cf
-  form(name='login', action='index_submit', method='get', accept-charset='utf-8')
-    ul
-        label(for='usermail') Email
-        br
-        br
-        input(type='email', name='usermail', placeholder='email', required='')
-        br
-        br
-        label(for='password') Password
-        br
-        br
-        input(type='password', name='password', placeholder='password', required='')
-        br
-        br
-        input(type='submit', value='Login')
+  h1 Login
+  form(method='post' action='javascript:void(0);')
+    input(type='email' required='' placeholder='Email' ng-model='loginData.email' autocomplete='off')
+    br
+    br
+    input(type='password' name='password' required='' ng-model='loginData.password' placeholder='Contraseña', autocomplete='off')
+    br
+    br
+    input(type='submit' value='Login' title='Registrar' ng-click='doLogin()')
