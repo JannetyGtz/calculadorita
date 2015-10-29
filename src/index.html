@@ -21,9 +21,12 @@
   </head>
   <body>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav" ng-controller='MenuController'>
             <li>
               <a href="#/login">Login</a>
+            </li>
+            <li>
+              <button ng-click='deleteCookies()'>Salir</button>
             </li>
             <li>
               <a href="#/new_store">Registra tu tiendita</a>

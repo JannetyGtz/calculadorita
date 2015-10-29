@@ -22,5 +22,5 @@ angular.module 'calculadorita'
         templateUrl: 'app/stores/stores.html'
         controller: 'StoresController'
         controllerAs: 'store_new'
-
+      
     #$urlRouterProvider.otherwise '/'

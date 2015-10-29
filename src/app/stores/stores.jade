@@ -1,17 +1,19 @@
 .container
 .stores
   h1 Crear Tiendita 
-  form(ng-submit= 'agregar()')
+  form(ng-submit= 'agregar(store)')
     input(type='text', ng-model='store.name' required placeholder='Nombre de tienda')
     br
     br
     input(type='text' ng-model='store.address' required placeholder='Direccion')
     br
     br
-    input(type='tel' name = 'phone' ng-model='store.phone' required placeholder='Telefono') 
+    input(type='tel' name = 'phone' ng-model='store.phone'  required placeholder='Telefono') 
     br
     br
     input(type='text' ng-model='store.city' required placeholder='Ciudad')
     br
     br
-    input(type='submit' value='Registrar' ng-click='agregar()')
+    input(type='submit' value='Registrar')
+    br
+    a(href='#/signup') Crear Usuario

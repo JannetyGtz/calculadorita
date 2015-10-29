@@ -1,6 +1,6 @@
 .signup
   h1 Crear Usuario
-  form(method='post' action='javascript:void(0);')
+  form(ng-submit= 'signup(signupData)')
     input(type='text' required='' placeholder='Nombre de usuario' ng-model='signupData.username' autocomplete='off')
     br
     br
@@ -10,4 +10,12 @@
     input(type='password' name='password' required='' ng-model='signupData.password' placeholder='Contraseña', autocomplete='off')
     br
     br
-    input(type='submit' value='Registrarse' title='Registrar' ng-click='doSign_up()')
+    input(type='tel' name='cellphone' required='' ng-model='signupData.cellphone' placeholder='Celular', autocomplete='off')
+    br
+    br
+    input(type='submit' value='Agregar usuario' title='Registrar' )
+    br
+    br
+    br
+    br
+    a(ui-sref='login' ng-show='has_user')  Ingresa a tu tienda

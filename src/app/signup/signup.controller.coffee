@@ -1,20 +1,30 @@
 angular.module 'calculadorita'
-  .controller 'SignupController', ($timeout, $scope, $firebaseArray, $state) ->
+  .controller 'SignupController', ($cookies, $scope, $firebaseArray, $state) ->
     $scope.signupData =
-      username: 'netty'
-      email: 'nett@gmail.com'
-      password: 'carajo'
-    $scope.doSign_up = () ->
+      username: 'Angel'
+      email: 'boto@gmail.com'
+      password: 'grosero'
+      cellphone: '614-456-8956'
+
+    $scope.has_user = false
+    $scope.signup = (signupData) ->
+      $scope.has_user = true
       ref = new Firebase('https://calculadoritaa.firebaseio.com')
       ref.createUser {
-        username: $scope.signupData.username
-        email: $scope.signupData.email
-        password : $scope.signupData.password
-      }, (error, userData) ->
+        email: signupData.email
+        password: signupData.password
+
+      }, (error, userData) =>
         if (error)
-          console.log("Error creating user:", error)
+          alert 'el usuario ya se encuentra registrado'
         else
-          $state.go('home')
+          users = ref.child("users/#{userData.uid}")
+          users.set({
+            username: signupData.username
+            email: signupData.email
+            store_id: $cookies.get('store_id')
+            cellphone: signupData.cellphone
+          })
           console.log("Successfully created user account with uid:", userData.uid)
         return
       $scope.signupData = ''
